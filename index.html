@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>online edit</title>
+    <link rel="preconnect" href="https://esm.sh" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <header class="panel__header">
+          <div>
+            <p class="eyebrow">shared text</p>
+            <h1>online edit</h1>
+          </div>
+          <div class="status" aria-live="polite">
+            <span class="status__dot" id="status-dot"></span>
+            <span id="status-text">connecting</span>
+          </div>
+        </header>
+
+        <label class="editor-wrap" for="editor">
+          <span class="sr-only">shared editor</span>
+          <textarea
+            id="editor"
+            spellcheck="false"
+            autocomplete="off"
+            autocapitalize="off"
+            placeholder="开始输入。所有打开这个页面的人会看到同一份文本。"
+          ></textarea>
+        </label>
+
+        <footer class="panel__footer">
+          <p>无登录，无保存，无持久化。</p>
+          <p><span id="peer-count">0</span> people online</p>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
